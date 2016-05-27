@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost/locar</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">123456</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">false</property>
+    <property name="hbm2ddl.auto">update</property>
+    <!--Mapeamento de classes-->
+    <mapping class="modelo.Acessorios.java"/>
+    <mapping class="modelo.CNH.java"/>
+    <mapping class="modelo.Cidade.java"/>
+    <mapping class="modelo.Cliente.java"/>
+    <mapping class="modelo.Contato.java"/>
+    <mapping class="modelo.Endereco.java"/>
+    <mapping class="modelo.Estado.java"/>
+    <mapping class="modelo.Frota.java"/>
+    <mapping class="modelo.Itinerario.java"/>
+    <mapping class="modelo.Locacao.java"/>
+    <mapping class="modelo.Manutencao.java"/>
+    <mapping class="modelo.Marca.java"/>
+    <mapping class="modelo.Modelo.java"/>
+    <mapping class="modelo.Ocorrencia.java"/>
+    <mapping class="modelo.Pedido.java"/>
+    <mapping class="modelo.PessoaFisica.java"/>
+    <mapping class="modelo.PessoaJuridica.java"/>
+    <mapping class="modelo.veiculo.java"/>
+  </session-factory>
+</hibernate-configuration>

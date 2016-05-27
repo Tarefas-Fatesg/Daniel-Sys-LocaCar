@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="1.5.4" thm="PMetroColorScheme" xs="false" id="_146437768970884" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" sm="false" abs="false" class="Frota" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378006393">
+        <jpa:attributes>
+            <basic attribute-type="int" visibile="true" name="totalVeiculos" id="_1464378430854129"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378010197" visibile="true" name="modelo" id="_1464378470374130"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_146437800640385"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Marca" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378008373">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="nome" id="_1464378309373121"/>
+            <basic attribute-type="String" visibile="true" name="descricao" id="_1464378310116122"/>
+            <basic attribute-type="String" visibile="true" name="modelo" id="_1464378311172123"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_146437800837387"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Modelo" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378010197">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="nome" id="_1464378359642125"/>
+            <basic attribute-type="String" visibile="true" name="descricao" id="_1464378360329126"/>
+            <basic attribute-type="float" visibile="true" name="valorDiaria" id="_1464378360874127"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378008373" visibile="true" name="marca" id="_1464378391473128"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_146437801019789"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Ocorrencia" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378012308">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="data" id="_1464378521914131"/>
+            <basic attribute-type="String" visibile="true" name="descricao" id="_1464378522355132"/>
+            <basic attribute-type="float" visibile="true" name="valor" id="_1464378522850133"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_146437801230891"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Manutencao" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378013554">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="data" id="_1464378601047134"/>
+            <basic attribute-type="String" visibile="true" name="descricao" id="_1464378601439135"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_146437801355593"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="veiculo" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378015290">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="placa" id="_1464378647733137"/>
+            <basic attribute-type="String" visibile="true" name="chassi" id="_1464378648173138"/>
+            <basic attribute-type="String" visibile="true" name="cor" id="_1464378648677139"/>
+            <one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1464378020904" visibile="true" name="acessorios" id="_1464378943705147"/>
+            <one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1464378013554" visibile="true" name="manutencao" id="_1464379000535148"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378010197" visibile="true" name="modelo" id="_1464378671092141"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_146437801529195"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Entity_7" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378016533">
+        <jpa:attributes>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_146437801653497"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Locacao" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378018510">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="dataLoca" id="_1464379183270152"/>
+            <basic attribute-type="String" visibile="true" name="dataDev" id="_1464379183678153"/>
+            <basic attribute-type="Float" visibile="true" name="subTotal" id="_1464379184113154"/>
+            <one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1464378012308" visibile="true" name="ocorrencias" id="_1464379272771156"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378015290" visibile="true" name="veiculo" id="_1464379296186157"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378750257" visibile="true" name="itinerario" id="_1464379302410158"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_146437801851199"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Acessorios" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378020904">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="nome" id="_1464379100498149"/>
+            <basic attribute-type="float" visibile="true" name="tarifa" id="_1464379100650150"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378020905101"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Endereco" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378024377">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="cep" id="_1464380259067192"/>
+            <basic attribute-type="String" visibile="true" name="rua" id="_1464380261331193"/>
+            <basic attribute-type="String" visibile="true" name="complemento" id="_1464380262443194"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378071532" visibile="true" name="estado" id="_1464380290799196"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378024377103"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Cliente" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378041067">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="nome" id="_1464380018357178"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378024377" visibile="true" name="endereco" id="_1464380038745180"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378050273" visibile="true" name="contato" id="_1464380154761184"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378041068105"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Contato" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378050273">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="residencial" id="_1464380093994182"/>
+            <basic attribute-type="String" visibile="true" name="celular" id="_1464380094754183"/>
+            <basic attribute-type="String" visibile="true" name="email" id="_1464380166087185"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378050273107"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Pedido" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378055200">
+        <jpa:attributes>
+            <basic attribute-type="float" visibile="true" name="valorTotal" id="_1464379814733172"/>
+            <basic attribute-type="String" visibile="true" name="status" id="_1464379879035175"/>
+            <basic attribute-type="String" visibile="true" name="caucao" id="_1464379969319177"/>
+            <one-to-many own="true" collection-type="java.util.List" connected-entity-id="_1464378018510" visibile="true" name="locacoes" id="_1464379855836174"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378041067" visibile="true" name="cliente" id="_1464379957664176"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378055201109"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="PessoaFisica" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378061874">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="cpf" id="_1464380224477189"/>
+            <basic attribute-type="String" visibile="true" name="rg" id="_1464380224807190"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378041067" visibile="true" name="cliente" id="_1464380237022191"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378061875111"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Estado" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378071532">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="Sigla" id="_1464380349472201"/>
+            <many-to-one optional="true" primaryKey="false" connected-entity-id="_1464378082443" visibile="true" name="cidade" id="_1464380333269200"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378071533113"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Cidade" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378082443">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="nome" id="_1464380374079205"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378082443115"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="PessoaJuridica" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378092267">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="razaoSocial" id="_1464380184430186"/>
+            <basic attribute-type="String" visibile="true" name="cnpj" id="_1464380185046187"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378041067" visibile="true" name="cliente" id="_1464380220222188"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378092267117"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="CNH" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378253711">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="numero" id="_1464380307258198"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378061874" visibile="true" name="pessoaFisica" id="_1464380320078199"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378253711119"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:entity xre="false" sm="false" abs="false" class="Itinerario" visibile="true" minimized="false" rootElement="_146437768970884" id="_1464378750257">
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="origem" id="_1464379343751159"/>
+            <basic attribute-type="float" visibile="true" name="KmTotal" id="_1464380417221206"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378071532" visibile="true" name="origemEstado" id="_1464379385471161"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378082443" visibile="true" name="origemCidade" id="_1464379391639162"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378071532" visibile="true" name="destinoEstado" id="_1464379716242170"/>
+            <one-to-one own="true" optional="true" primaryKey="false" connected-entity-id="_1464378082443" visibile="true" name="destinoCidade" id="_1464379721899171"/>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1464378750260142"/>
+        </jpa:attributes>
+    </jpa:entity>
+    <jpa:c>
+        <ct>java.util.List</ct>
+        <ct>java.util.Set</ct>
+        <ct>java.util.Collection</ct>
+    </jpa:c>
+    <jpa:diagram>
+        <plane elementRef="_146437768970884">
+            <shape elementRef="_1464378006393">
+                <Bounds x="274.0" y="37.0" width="131.0" height="118.0"/>
+            </shape>
+            <shape elementRef="_1464378008373">
+                <Bounds x="29.0" y="210.0" width="135.0" height="126.0"/>
+            </shape>
+            <shape elementRef="_1464378010197">
+                <Bounds x="270.0" y="210.0" width="144.0" height="158.0"/>
+            </shape>
+            <shape elementRef="_1464378012308">
+                <Bounds x="267.0" y="478.0" width="169.0" height="126.0"/>
+            </shape>
+            <shape elementRef="_1464378013554">
+                <Bounds x="610.0" y="6.0" width="180.0" height="106.0"/>
+            </shape>
+            <shape elementRef="_1464378015290">
+                <Bounds x="539.0" y="164.0" width="141.0" height="198.0"/>
+            </shape>
+            <shape elementRef="_1464378016533">
+                <Bounds x="1379.0" y="210.0" width="147.0" height="54.0"/>
+            </shape>
+            <shape elementRef="_1464378018510">
+                <Bounds x="539.0" y="478.0" width="150.0" height="198.0"/>
+            </shape>
+            <shape elementRef="_1464378020904">
+                <Bounds x="750.0" y="192.0" width="169.0" height="106.0"/>
+            </shape>
+            <shape elementRef="_1464378024377">
+                <Bounds x="1265.0" y="555.0" width="158.0" height="158.0"/>
+            </shape>
+            <shape elementRef="_1464378041067">
+                <Bounds x="953.0" y="350.0" width="142.0" height="138.0"/>
+            </shape>
+            <shape elementRef="_1464378050273">
+                <Bounds x="1050.0" y="192.0" width="149.0" height="126.0"/>
+            </shape>
+            <shape elementRef="_1464378055200">
+                <Bounds x="750.0" y="350.0" width="141.0" height="178.0"/>
+            </shape>
+            <shape elementRef="_1464378061874">
+                <Bounds x="1050.0" y="555.0" width="184.0" height="138.0"/>
+            </shape>
+            <shape elementRef="_1464378071532">
+                <Bounds x="778.0" y="633.0" width="141.0" height="118.0"/>
+            </shape>
+            <shape elementRef="_1464378082443">
+                <Bounds x="750.0" y="909.0" width="141.0" height="86.0"/>
+            </shape>
+            <shape elementRef="_1464378092267">
+                <Bounds x="1246.0" y="368.0" width="196.0" height="138.0"/>
+            </shape>
+            <shape elementRef="_1464378253711">
+                <Bounds x="1526.0" y="404.0" width="138.0" height="118.0"/>
+            </shape>
+            <shape elementRef="_1464378750257">
+                <Bounds x="522.0" y="721.0" width="158.0" height="198.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>
